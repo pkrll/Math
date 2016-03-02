@@ -12,7 +12,7 @@ class Math {
         great = numbers[index]
       }
 
-      great = gcf(great, numbers[++index])
+      great = Math.GCF(great, numbers[++index])
     }
     
     return great
@@ -20,7 +20,7 @@ class Math {
   
   // Greatest common factors (two numbers)
   class func GCF(a: Int, _ b: Int) -> Int {
-    return b == 0 ? a : gcf(b, a % b)
+    return b == 0 ? a : Math.GCF(b, a % b)
   }
   
   // Lowest common multiples
