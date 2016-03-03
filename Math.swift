@@ -44,11 +44,11 @@ class Math {
   }
   
   class func Factorial(n: Int) -> Int {
-    return n < 1 ? 1 : n * Factorial(n-1)
+    return n < 1 ? 1 : n * Math.Factorial(n-1)
   }
 
   class func Pow(a: Int, _ e: Int) -> Int {
-    return e < 1 ? 1 : a * Pow(a, e-1)
+    return e < 1 ? 1 : a * Math.Pow(a, e-1)
   }
   
   class func BinarySearch(key: Int, var _ numbers: [Int]) -> Bool {
@@ -64,7 +64,15 @@ class Math {
       numbers = Array(numbers[index..<numbers.count])
     }
 
-    return BinarySearch(key, numbers)
+    return Math.BinarySearch(key, numbers)
   }
-
+  
+  class func ConvertToFahrenheit(fromCelsius d: Double) -> Double {
+    return 9*d/5+32
+  }
+  
+  class func ConvertToCelsius(fromFahrenheit d: Double) -> Double {
+    return 5/9*(d-32)
+  }
+  
 }
